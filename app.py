@@ -7,13 +7,18 @@ st.title('Análisis de datos de Sensores en Mi Ciudad')
 image = Image.open('grafana2.jpg')
 st.image(image)
 
+# Subida de archivo
 uploaded_file = st.file_uploader('Selecciona tu archivo csv')
 
+# Lectura del archivo
 if uploaded_file is not None:
    df1=pd.read_csv(uploaded_file)
 
+   # Parte grafica de los datos
    st.subheader('Perfil gráfico de la variable medida.')
+   # Para la variable tiempo
    df1 = df1.set_index('Time')
+   # Representacion grafica lineal del tiempo
    st.line_chart(df1)
    
    st.write(df1)
