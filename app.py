@@ -17,7 +17,7 @@ if uploaded_file is not None:
    # Parte grafica de los datos
    st.subheader('Perfil gráfico de la variable medida.')
    # Para la variable tiempo
-   df1 = df1.set_index('Time')
+   df1 = df1.set_index('time')
    # Representacion grafica lineal del tiempo
    st.line_chart(df1)
    
